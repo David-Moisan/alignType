@@ -1,0 +1,8 @@
+type Test {
+    id: ID!
+    name: String!
+    firstname: String
+    roles: [Role]!
+    age: Int
+    is_vip: Boolean 
+}

@@ -11,6 +11,34 @@ Currently at version 0.0.1, Align Type is just getting warmed up, but fear not, 
 ./align_type [path_to_graphql_schema] [path_to_typescript_type_file]
 ```
 
+## What Align Type Does
+
+Align Type takes your GraphQL type definitions, such as:
+
+```graphql
+type Test {
+    id: ID!
+    name: String!
+    firstname: String
+    roles: [Role]!
+    age: Int
+    is_vip: Boolean 
+}
+```
+
+And converts them into TypeScript type declarations like:
+
+```ts
+export type Test = {
+    id: number,
+    name: string,
+    firstname: string | null,
+    roles: Role[],
+    age: number | null,
+    is_vip: boolean,
+};
+```
+
 ## The Future Looks Bright
 
 - [ ] SQL mapping for those SQLite enthusiasts out there who brave the wild without an ORM and need to juggle types for SQLite, GraphQL, and TypeScript (yes, that's me too!)
